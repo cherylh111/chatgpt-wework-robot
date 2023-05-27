@@ -38,10 +38,8 @@ export class OpenAI {
     #openai = null;
 
     constructor() {
-        this.#configuration = new Configuration( {apiKey: process.env.OPENAI_API_KEY} );
-        this.#openai = new OpenAIApi(this.#configuration, {
-            proxy: 'https://api.chatanywhere.cn',
-        });
+        this.#configuration = new Configuration( {apiKey: process.env.OPENAI_API_KEY, apiBase: 'https://api.chatanywhere.cn/v1'} );
+        this.#openai = new OpenAIApi(this.#configuration);
     }
 
     static create() {
