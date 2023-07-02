@@ -156,6 +156,7 @@ IP地址如下图，Render->Connect->Outbound
 
 3. 收到提示“域名主体校验未通过...” <br/>
 解决办法： 原因腾讯对认证企业的安全检测，办法是需要企业有自己的域名，然后配置自己的域名CNAME指向上面的域名，这样就符合企业微信合规检测。
+更多细节请参考这里 https://render.com/docs/custom-domains
 
 
 4. 给AI发消息，只收到“正在生成回答”，服务端也看到了AI回复 <br/>
@@ -164,6 +165,10 @@ IP地址如下图，Render->Connect->Outbound
 5. 可信IP无法配置 <br/>
 解决办法：提示不允许第三方IP, 要求公司自己的服务器的，原因腾讯对认证企业的安全检测，遇此问题的, 办法一是购买自己的服务器，将服务配置到服务器上，办法二是选择钉钉一键部署，钉钉没有此限制。
 
+6. 有时发消息没有回应 <br/>
+刚一开始好用，过段时间发消息没有反应，这是因为render 免费版的限制， 每过一段时间不使用，render 服务会停止，再发消息会重新唤醒服务，这过程需要3-5分钟时间，方法是间隔发几条消息，直到他重新成功，
+才会收到回复。
+解决办法：升级成付费版本starter,或者自购服务器部署，可参考下面的docker部署。 
 ## 服务器部署
 <details>
     <summary>点击查看详细</summary>
@@ -280,7 +285,7 @@ systemctl start aistory.service
 欢迎来群里讨论！
 
 <div align="center">
-     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/e3090465-8857-4100-8e0e-df0d398e50f7" width="200px" alt="group">
+     <img src="https://github.com/sytpb/chatgpt-wework-robot/assets/12178686/1370d669-180e-472f-bed8-e1d7e400e899" width="200px" alt="group">
 </div>
 
 
